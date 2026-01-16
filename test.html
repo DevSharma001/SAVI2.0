@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SAVI Global Sourcing LLP</title>
+  <link rel="icon" type="image/png" href="images/savi.jpeg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-soft: #e0edff;
+      --primary-dark: #1d4ed8;
+      --accent: #0ea5e9;
+      --bg: #f5f7fb;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, #e0f2fe 0, transparent 55%),
+    radial-gradient(circle at bottom right, #e5e7eb 0, transparent 55%),
+    var(--bg) !important;
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.85rem 0;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-mark {
+      width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+  /* animation: pulseLogo 3s ease-in-out infinite !important  ; */
+    }
+    .logo-mark img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+       width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+  /* animation: pulseLogo 3s ease-in-out infinite !important  ; */
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .logo-tagline {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+     .nav-links {
+      /* display: none; */
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding-bottom: 0.15rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+      border-color: var(--primary-soft);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 18px;
+      height: 2px;
+      background: #0f172a;
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: #0f172a;
+    }
+
+    .nav-toggle span::before {
+      top: -5px;
+    }
+
+    .nav-toggle span::after {
+      top: 5px;
+    }
+
+    @media (max-width: 840px) {
+      .nav-links {
+        position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin-top: 0.4rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 15;
+      }
+      .nav-links a {
+        width: 100%;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+      }
+       .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* Default: hidden */
+  .nav-links:not(.is-open) {
+    display: none;
+  }
+
+  /* Jab JS se is-open class lagegi to dikhna chahiye */
+  .nav-links.is-open {
+    display: flex;
+  }
+}
+
+/* Desktop ke liye jo tumhare paas already hai: */
+/* Mobile nav dropdown */
+@media (max-width: 839px) {
+  .nav {
+    position: relative;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin-top: 0.4rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 15;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* Default: hidden on mobile */
+  .nav-links:not(.is-open) {
+    display: none;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+/* Desktop nav */
+@media (min-width: 840px) {
+  .nav-links {
+    display: flex;
+    position: static;
+    margin-top: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-links a {
+    width: auto;
+    padding: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+    
+
+    /* BUTTONS */
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease-out;
+      background: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+        
+
+    }
+  
+    .btn-primary:hover {
+      filter: brightness(1.04);
+      transform: translateY(-2px);
+      /* animation: pulseLogo 0.1s ease-in 1 !important  ; */
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--muted);
+      background: #f8fafc;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-soft);
+      color: var(--primary-dark);
+      background: #ffffff;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 0rem 0 3.25rem;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.05)),
+    linear-gradient(180deg, #ffffff, #f5f7fb);
+    
+}
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: -10rem 0 4rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      }
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary-soft);
+      background: #eff6ff;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary-dark);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-kicker-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-title {
+      font-size: 2.1rem !important; 
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 2.7rem;
+      }
+    }
+
+    .hero-title span {
+      color: var(--primary-dark);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta span::before {
+      content: "• ";
+      opacity: 0.45;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .hero-note strong {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .hero-panel {
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+      padding: 1.35rem 1.4rem;
+    }
+
+    .hero-panel-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-panel-header span:first-child {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-panel-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+    }
+
+    .hero-panel-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--primary-dark);
+      border: 1px solid #dbeafe;
+      white-space: nowrap;
+    }
+
+    .hero-panel-footer {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+    main {
+      padding-bottom: 3.5rem;
+    }
+
+    section {
+      padding: 2.75rem 0 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+
+    .section-description {
+      font-size: 0.94rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 1rem 1.05rem 1.05rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+
+    }
+
+    .card-soft {
+      background: linear-gradient(180deg, #eff6ff, #ffffff);
+      border-color: #dbeafe;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+
+    .card-subtitle {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    .list {
+      padding-left: 1.1rem;
+      margin-top: 0.4rem;
+    }
+
+    .list li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      list-style: disc;
+    }
+
+    /* STEPS */
+    .steps {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 1rem 1.05rem;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.7rem;
+      align-items: flex-start;
+      padding: 0.6rem 0;
+    }
+
+    .step:not(:last-child) {
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--primary-dark);
+      background: #eff6ff;
+    }
+
+    .step-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+      color: #0f172a;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.02);
+    }
+
+    .faq-q {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* CONTACT FORM */
+    .contact-layout {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 860px) {
+      .contact-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+    }
+
+    .form-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 1.1rem 1.1rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    @media (min-width: 600px) {
+      .form-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    .form-label span {
+      color: #dc2626;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      border-radius: 0.6rem;
+      border: 1px solid #d1d5db;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      background: #f9fafb;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-hint {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 0 2.1rem;
+      margin-top: 3.2rem;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .footer-main {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-main {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+
+    .footer-brand {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .footer-brand strong {
+      color: #0f172a;
+    }
+
+    .footer-contact p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-contact a {
+      color: var(--primary-dark);
+    }
+
+    .footer-bottom {
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    @keyframes pulseLogo {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.6);
+  }
+}
+.section-header,
+.card,
+.steps,
+.faq-item,
+.form-card {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#top,
+#about,
+#services,
+#faqs,
+#contact {
+  scroll-margin-top: 40px;
+}
+#hero-grid{
+    background-image: url(/images/1.jpg);
+}
+/* Hero background image + overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background-image: url("images/2.jpg"); /* yahan tumhari hero image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;           /* zyada dark ho to 0.12 kar dena */
+  filter: saturate(1.05);
+  pointer-events: none;
+  z-index:0;
+}
+
+/* Hero me content upar dikhane ke liye */
+.hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a href="#top" class="logo-block">
+          <div class="logo-mark">
+            <img src="images/savi.jpeg" alt="">
+          </div>
+          
+          <div class="logo-text">
+            
+            <span>SAVI GLOBAL</span>
+            <!-- <span class="logo-tagline">Furniture &amp; home accessories operations</span> -->
+             <span class="logo-tagline">Scale furniture &amp; décor across every channel</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#faqs">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="mailto:saviglobalsourcing@gmail.com" class="btn-primary nav-cta">
+          Email us
+        </a>
+
+        <!-- Mobile toggle (visual only, no JS) -->
+        <button class="nav-toggle"aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid" id="hero-grid">
+        <div>
+          
+          <h1 class="hero-title"><br>
+            SAVI Global Sourcing LLP<br />
+            <h2>
+              Smart eCommerce operations for furniture & home accessories brands.
+            </h2>
+            
+          </h1>
+          <p class="hero-subtitle">
+           Launch and scale across marketplaces like Wayfair, Amazon, Houzz, Bed Bath & Beyond, and Walmart—with one partner managing setup, inventory, orders, payments, returns, promotions, and advertising end-to-end.
+          </p>
+          <div class="hero-meta">
+            <span><b>Founded:</b> 2025</span><br>
+            <span><b>Focus:</b> Furniture, upholstery, accessories (bags, lighting, pillows &amp; more)</span>
+          </div>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">
+              Talk to SAVI →
+            </a>
+            <a href="#services" class="btn-outline">
+              View services
+            </a>
+          </div>
+          <p class="hero-note">
+            <strong>Our role:</strong> be your plug-in marketplace team so you don’t need to build and manage a full in-house operation for every channel.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Marketplace lifecycle overview">
+          <div class="hero-panel-header">
+            <span></span>
+            <span>End-to-end marketplace lifecycle</span>
+          </div>
+          <div class="hero-panel-title">
+            Listings, inventory, orders, returns &amp; promotions managed together.
+          </div>
+          <p class="hero-panel-text">
+            We bring category-specific experience in furniture and home accessories, and handle the operational details that decide how your brand performs on each marketplace.
+          </p>
+          <div class="hero-tag-row">
+            <span class="hero-tag">Wayfair</span>
+            <span class="hero-tag">Amazon</span>
+            <span class="hero-tag">Houzz</span>
+            <span class="hero-tag">Bed Bath &amp; Beyond</span>
+            <span class="hero-tag">Walmart</span>
+          </div>
+          <p class="hero-panel-footer">
+            From seller account setup to daily inventory updates and scorecard health, our team works as an extension of yours.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">About SAVI</div>
+          <h2 class="section-title">Who we are, what we do &amp; why we started</h2>
+          <p class="section-description">
+            SAVI Global Sourcing LLP is focused on helping furniture and home accessories brands grow on marketplaces without needing to build their own complex eCommerce operations.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card card-soft">
+            <div class="card-title">Who we are</div>
+            <p>
+              SAVI Global Sourcing LLP is an eCommerce enablement partner dedicated to furniture and home accessories brands. We work with manufacturers, importers, and private labels that want structured marketplace operations without adding internal overhead.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">What we do</div>
+            <p>
+              We manage the marketplace lifecycle end-to-end—from seller account setup and listings to inventory updates, order processing, returns, and performance health—so you can focus on products and long-term growth.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Why we started</div>
+            <p>
+              In 2025, we started SAVI to solve a common problem: strong products and brands losing opportunities because of complex marketplace rules, integrations, and service levels. Our aim is to make these channels structured and manageable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketplaces (content, but no nav link) -->
+    <section id="marketplaces">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">Marketplaces</div>
+          <h2 class="section-title">Scale across the right channels</h2>
+          <p class="section-description">
+            We work on leading marketplaces and add more channels carefully, based on your catalog and business goals.
+          </p>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Wayfair</span>
+          <span class="pill">Amazon</span>
+          <span class="pill">Houzz</span>
+          <span class="pill">Bed Bath &amp; Beyond</span>
+          <span class="pill">Walmart</span>
+          <span class="pill">Additional channels evaluated as needed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">Services</div>
+          <h2 class="section-title">End-to-end marketplace services</h2>
+          <p class="section-description">
+            Our work covers the practical areas needed to launch, operate, and grow your marketplace business.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Channel Setup & Expansion -->
+          <div class="card card-soft">
+            <div class=" card-title">Channel setup &amp; expansion</div>
+            <div class="card-subtitle"><b>Get seller accounts and catalogs ready</b> </div>
+            <ul class="list">
+              <li>Seller account creation, compliance, and brand/storefront setup.</li>
+              <li>Catalog onboarding, category mapping, and variant structures aligned with marketplace expectations.</li>
+              <li>Daily inventory updates on channels to keep stock levels accurate.</li>
+            </ul>
+          </div>
+
+          <!-- Content & Merchandising -->
+          <div class="card card-soft">
+            <div class="card-title">Content &amp; merchandising</div>
+            <div class="card-subtitle"><b>Optimize discoverability and conversion</b></div>
+            <ul class="list">
+              <li>SEO-aligned titles, feature bullet points, and product descriptions.</li>
+              <li>Image standards and enhanced content where supported by the marketplace.</li>
+              <li>Attribute completion to improve search relevance and conversion.</li>
+            </ul>
+          </div>
+
+          <!-- Inventory & Order Operations -->
+          <div class="card">
+            <div class="card-title">Inventory &amp; order operations</div>
+            <div class="card-subtitle"><b>Stay on top of inventory and SLAs</b></div>
+            <ul class="list">
+              <li>Inventory sync rules, including safety stock and buffer logic.</li>
+              <li>Order processing and routing for dropship/3P and 1P, where applicable.</li>
+              <li>Shipment SLAs, tracking updates, and exception handling.</li>
+            </ul>
+          </div>
+
+          <!-- Payments, Returns & Customer Care -->
+          <div class="card">
+            <div class="card-title">Payments, returns &amp; customer care</div>
+            <div class="card-subtitle"><b>Close the loop on every order</b></div>
+            <ul class="list">
+              <li>Payment tracking and oversight on chargebacks and adjustments.</li>
+              <li>Return and replacement workflows aligned with marketplace policies.</li>
+              <li>Customer message handling within the required response timelines.</li>
+            </ul>
+          </div>
+
+          <!-- Promotions & Advertising -->
+          <div class="card">
+            <div class="card-title">Promotions &amp; advertising</div>
+            <div class="card-subtitle"><b>Plan campaigns and drive demand</b></div>
+            <ul class="list">
+              <li>Campaign planning for seasonal peaks and clearance needs.</li>
+              <li>Marketplace advertising (for example, Sponsored Ads) and deal mechanics.</li>
+              <li>Review programs and basic performance views to support decisions.</li>
+            </ul>
+          </div>
+
+          <!-- Compliance & Performance Health -->
+          <div class="card">
+            <div class="card-title">Compliance &amp; performance health</div>
+            <div class="card-subtitle"><b>Protect your marketplace scorecards</b></div>
+            <ul class="list">
+              <li>Monitoring of key metrics like on-time shipping, cancellations, and defect rates.</li>
+              <li>Policy adherence, documentation, and readiness for checks.</li>
+              <li>Support in reducing risk around listing or account disruptions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">Categories we specialize in...</div>
+          <h2 class="section-title">Purpose-built for furniture &amp; accessories</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card card-soft">
+            <div class="card-title">Furniture</div>
+            <p>
+              Focus on case goods, seating, tables, storage, and outdoor furniture where marketplace operations require detailed attributes and reliable logistics.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Upholstery</div>
+            <p>
+              Support for sofas, sectionals, accent chairs, ottomans, and similar upholstered products with attention to content, packaging details, and handling expectations.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Accessories</div>
+            <p>
+              Experience with bags, lighting, pillows, throws, mirrors, and other décor accessories that complete the catalog around your furniture range.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work -->
+    <section id="how-we-work">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">How we work</div>
+          <h2 class="section-title">A clear, performance-driven lifecycle</h2>
+          <p class="section-description">
+            We prefer a simple, structured approach—from understanding your catalog to managing operations and then improving performance over time.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <div class="step-title">Assess</div>
+              <p>
+                Review your catalog, current operations, and marketplace fit so we are clear on where to start and which channels make sense.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <div class="step-title">Launch</div>
+              <p>
+                Set up accounts, listings, pricing, basic policies, and SLAs so your presence on the chosen marketplaces is structured from day one.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <div class="step-title">Operate</div>
+              <p>
+                Run daily operations for inventory, orders, returns, and customer messages, keeping a close eye on scorecards and compliance.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <div class="step-title">Grow</div>
+              <p>
+                Optimize content, promotions, and ad activity based on results, and consider new channels once the base is stable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Sets Us Apart -->
+    <section id="differentiators">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">What sets us apart</div>
+          <h2 class="section-title">Aligned with furniture marketplace realities</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card card-soft">
+            <div class="card-title">Category depth</div>
+            <p>
+              Built around furniture and home accessories, with attention to large parcel requirements, product attributes, and the expectations that come with these categories.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Operational focus</div>
+            <p>
+              Clear SLAs, practical workflows, and regular tracking of key metrics keep operations grounded and predictable.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Structured &amp; transparent</div>
+            <p>
+              Start with one marketplace and expand as performance and readiness improve, supported by straightforward views into what is happening on the channels we manage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">FAQs</div>
+          <h2 class="section-title">Answers to common questions</h2>
+        </div>
+        <div class="grid">
+          <div class="faq-item">
+            <div class="faq-q">Do you work with dropship model?</div>
+            <div class="faq-a">
+              Yes. Where there is a strong fit, we support dropship/3P operations and manage the related processes as part of daily operations.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can you work with my current ERP/WMS?</div>
+            <div class="faq-a">
+              In most cases, yes. We adapt to your existing systems and agree on practical workflows so marketplace operations sit well with your current setup.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How fast can we launch?</div>
+            <div class="faq-a">
+              Launch timelines depend on channel approvals and catalog readiness. We usually start onboarding immediately after scope alignment and required access is shared.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="scroll-margin-top: 50px; ">
+      <div class="container">
+        <div class="section-header">
+          <div class="hero-title">Contact Us</div>
+          <h2 class="section-title">Start a conversation</h2>
+          <p class="section-description">
+            Share your catalog, current channels, and goals. We will review and respond with how we can support your marketplace operations.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Contact Form -->
+          <div class="form-card">
+            <form action="#" method="post">
+              <div class="form-grid form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="name">Full name <span>*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="company">Company</label>
+                  <input type="text" id="company" name="company" placeholder="Your company name" />
+                </div>
+              </div>
+
+              <div class="form-grid" style="margin-top:0.9rem;">
+                <div class="form-field">
+                  <label class="form-label" for="email">Work email <span>*</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" required />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" placeholder="Short summary" />
+                </div>
+              </div>
+
+              <div class="form-grid" style="margin-top:0.9rem;">
+                <div class="form-field">
+                  <label class="form-label" for="message">How can SAVI help? <span>*</span></label>
+                  <textarea id="message" name="message" placeholder="Tell us a little about your catalog and marketplaces you are interested in." required></textarea>
+                  <p class="form-hint">
+                    This form is static. To receive responses, connect it to your preferred email or backend.
+                  </p>
+                </div>
+              </div>
+
+              <div style="margin-top:1rem; display:flex; gap:0.7rem; align-items:center;">
+                <button type="submit" class="btn-primary">Submit enquiry</button>
+                <a href="mailto:saviglobalsourcing@gmail.com" class="btn-outline">Or email directly</a>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Info Card -->
+          <div class="card card-soft">
+            <div class="card-title">SAVI Global Sourcing LLP</div>
+            <p style="margin-top:0.35rem;">
+              We operate as your marketplace eCommerce partner for furniture and home accessories brands.
+            </p>
+            <p style="margin-top:0.8rem; font-size:0.9rem; color:var(--muted);">
+              CallUs:<br />
+              <a href="tel:+918126641977" target="_blank" rel="noopener noreferrer">+918126641977</a>
+            </p>
+            <p style="margin-top:0.4rem; font-size:0.9rem; color:var(--muted);">
+              Email:<br />
+              <a href="mailto:saviglobalsourcing@gmail.com">saviglobalsourcing@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <strong>SAVI Global Sourcing LLP</strong><br />
+          Smart marketplace operations for furniture and home accessories brands, with a focus on furniture, upholstery, and accessories including bags, lighting, pillows, and more.
+        </div>
+        <div class="footer-contact">
+          <p>
+            Contact No.:
+            <a href="tel:+918126641977" target="_blank" rel="noopener noreferrer">
+              +91 81266 41977
+            </a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:saviglobalsourcing@gmail.com">
+              saviglobalsourcing@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© SAVI Global Sourcing LLP</span>
+        <span>Marketplace enablement for furniture &amp; home accessories</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (!navToggle || !navLinks) return;
+
+    // Burger pe click -> open / close
+    navToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Menu ke kisi link pe click -> menu band
+    navLinks.addEventListener("click", function (event) {
+      if (event.target.tagName === "A") {
+        navLinks.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
